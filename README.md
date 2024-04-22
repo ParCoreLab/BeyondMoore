@@ -10,4 +10,7 @@ Projects:
 
 ---
 
-This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 949587).
+> [!NOTE]
+> This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 949587).
+
+![ERC Logo](https://raw.githubusercontent.com/ParCoreLab/BeyondMoore/main/assets/erc_logo-150x150.png)
