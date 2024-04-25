@@ -1,3 +1,5 @@
+#BeyondMoore
+
 <img alt="BeyondMoore Logo" src="https://raw.githubusercontent.com/ParCoreLab/BeyondMoore/main/assets/BeyondMoore-logo.png" width="250px">
 
 ## _Pioneering the Future of Computing_
@@ -8,10 +10,10 @@
 ## BeyondMoore Software Ecosystem
 
 _Compiler, Runtime and Execution Models_
-* [CPU-Free Execution Model](#CPU-Free-Model): A Fully Autonomous Execution Model for Multi-GPU Applications 
-* [CPU-Free Task Graph](#TaskGraph): CPU-Free Task Graph Execution using CUDA Graphs
-* [CPU-Free Compiler](#CPU-Free-Model-Compiler): Compiler for Generating CPU-Free Multi-GPU code
-* [Multi-GPU Callbacks](#Multi-GPU-Callbacks): GPU to CPU Callback Mechanisms
+* [CPU-Free Execution Model](#CPU-Free-Model): a fully autonomous execution model for multi-GPU applications 
+* [CPU-Free Task Graph](#CPU-Free-Task-Graph): a lightweight runtime system tailored for CPU-free task graph execution
+* [CPU-Free Compiler](#CPU-Free-Model-Compiler): Compiler for generating CPU-Free multi-GPU code
+* [Multi-GPU Callbacks](#Multi-GPU-Callbacks): GPU to CPU callback mechanisms
   
 _Performance Tools_
 * [Snoopie](#Snoopie): A Multi-GPU Communication Profiler and Visualiser
@@ -23,22 +25,15 @@ This project introduces a fully autonomous execution model for multi-GPU applica
 
 More details about the project [here](https://github.com/ParCoreLab/CPU-Free-model).
 
+### Ilyas's CUDA Graph Work
+
+(To Be Added)
 
 ### Snoopie
 
-With data movement becoming one of the most expensive bottlenecks in computing, the need for profiling tools to analyze
-communication becomes crucial for effectively scaling multi-GPU applications. While existing profiling tools including
-first-party software by GPU vendors are robust and excel at capturing compute operations within a single GPU, support
-for monitoring GPU-GPU data transfers and calls issued by communication libraries is currently inadequate. To fill these
-gaps, we introduce [Snoopie](https://github.com/parcorelab/snoopie), an instrumentation-based multi-GPU
-communication profiling tool built on NVBit, capable of tracking peer-to-peer transfers and GPU-centric
-communication library calls. To increase programmer productivity, [Snoopie](https://github.com/parcorelab/snoopie)
-can attribute data movement to the source code line and the data objects involved. It comes with multiple
-visualization modes at varying granularities, from a coarse view of the data movement in the system as a whole to
-specific instructions and addresses. Our case studies demonstrate [Snoopie](https://github.com/parcorelab/snoopie)’s
-effectiveness in monitoring data movement, locating performance bugs in applications, and understanding concrete
-data transfers abstracted beneath communication libraries. The tool is publicly available
-[here](https://github.com/ParCoreLab/snoopie).
+With data movement posing a significant bottleneck in computing, profiling tools are essential for scaling multi-GPU applications efficiently. However, existing tools focus primarily on single GPU compute operations and lack support for monitoring GPU-GPU transfers and communication library calls. Addressing these gaps, we present Snoopie, an instrumentation-based multi-GPU communication profiling tool. Snoopie accurately tracks peer-to-peer transfers and GPU-centric communication library calls, attributing data movement to specific source code lines and objects. It offers various visualization modes, from system-wide overviews to detailed instructions and addresses, enhancing programmer productivity. 
+
+The tool is publicly available [here](https://github.com/ParCoreLab/snoopie).
 
 
 ### CPU Free Model Compiler
@@ -62,9 +57,6 @@ on average by 15.7% at the cost of callback overheads with a minimum of 6.50 mic
 on Nvidia, depending on the chosen callback mechanism. Moreover, the proposed model can reduce the total device usage by
 up to 35%, which is associated with higher energy efficiency. Part of the project code is available [here](https://github.com/msasongko17/multigpu_callback).
 
-### Ilyas's CUDA Graph Work
-
-(To Be Added)
 
 
 ---
