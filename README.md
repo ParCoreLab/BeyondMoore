@@ -11,9 +11,10 @@
 
 _Compiler, Runtime and Execution Models_
 * [CPU-Free Execution Model](#CPU-Free-Model): a fully autonomous execution model for multi-GPU applications 
-* [CPU-Free Task Graph](#CPU-Free-Task-Graph): a lightweight runtime system tailored for CPU-free task graph execution
-* [CPU-Free Compiler](#CPU-Free-Model-Compiler): Compiler for generating CPU-Free multi-GPU code
 * [Multi-GPU Callbacks](#Multi-GPU-Callbacks): GPU to CPU callback mechanisms
+* [CPU-Free Task Graph](#CPU-Free-Task-Graph): a lightweight runtime system tailored for CPU-free task graph execution
+* [CPU-Free Compiler](#CPU-Free-Model-Compiler): compiler for generating CPU-Free multi-GPU code
+* [Unified Communication Library](#Unified-Communication-Library): a unified communication library for device-to-device communication
   
 _Performance Tools_
 * [Snoopie](#Snoopie): A Multi-GPU Communication Profiler and Visualiser
@@ -25,37 +26,33 @@ This project introduces a fully autonomous execution model for multi-GPU applica
 
 More details about the project [here](https://github.com/ParCoreLab/CPU-Free-model).
 
-### Ilyas's CUDA Graph Work
+### Muli-GPU Call-backs
 
-(To Be Added)
+To address resource underutilization in multi-GPU systems, particularly in irregular applications, we propose a GPU-sided resource allocation method. This method dynamically adjusts the number of GPUs in use based on workload changes, utilizing GPU-to-CPU callbacks to request additional devices during kernel execution. We implemented and tested multiple callback methods, measuring their overheads on Nvidia and AMD platforms. Demonstrating the approach in an irregular application like Breadth-First Search (BFS), we achieved a 15.7% reduction in time to solution on average, with callback overheads as low as 6.50 microseconds on AMD and 4.83 microseconds on Nvidia. Additionally, the model can reduce total device usage by up to 35%, improving energy efficiency. 
+
+The call back mechanisms used in project available [here](https://github.com/msasongko17/multigpu_callback).
+
+### CPU-Free Task Graph
+
+We've designed and implemented a lightweight runtime system tailored for CPU-free task graph execution in multi-device systems. Our runtime minimizes CPU involvement by handling task graph initialization exclusively, while executing all subsequent operations on the GPU side. This runtime system provides online scheduling of graph nodes, monitors GPU resource usage, manages memory allocation and data transfers, and synchronously tracks task dependencies. By accepting computational graphs as input, originally designed for single GPUs, it seamlessly scales to multiple GPUs without necessitating code modifications. 
+
+More details about the project will be available soon. The related paper is under review.
+
+### CPU-Free Model Compiler
+
+We're actively crafting a compiler to empower developers to write high-level Python code that compiles into efficient CPU-free device code. This compiler integrates GPU-initiated communication libraries, NVSHMEM for NVIDIA and ROC_SHMEM for AMD, enabling GPU communication directly within Python code. With automatic generation of GPU-initiated communication calls and persistent kernels, we aim to streamline development workflows. Our prototype will be available soon. 
+
+### Unified Communication Library
+
+We're undertaking the design of an API for a unified communication library to streamline device-to-device communication within the CPU-free model by aiming to optimize communication efficiency across diverse devices. 
+
+More details about the project will be available soon. The related paper is under preparation.
 
 ### Snoopie
 
 With data movement posing a significant bottleneck in computing, profiling tools are essential for scaling multi-GPU applications efficiently. However, existing tools focus primarily on single GPU compute operations and lack support for monitoring GPU-GPU transfers and communication library calls. Addressing these gaps, we present Snoopie, an instrumentation-based multi-GPU communication profiling tool. Snoopie accurately tracks peer-to-peer transfers and GPU-centric communication library calls, attributing data movement to specific source code lines and objects. It offers various visualization modes, from system-wide overviews to detailed instructions and addresses, enhancing programmer productivity. 
 
 The tool is publicly available [here](https://github.com/ParCoreLab/snoopie).
-
-
-### CPU Free Model Compiler
-
-As a follow up to the CPU Free Model presented earlier. This project works on incoperating the CPU Free Model as a
-Compiler Optimisation such that higher level GPU Code can benifit from the CPU Free Model allowing for improved
-performance when compared to the previous generated applications. The project code is available
-[here](https://github.com/ParCoreLab/CPU-Free-Model-Compiler).
-
-### Muli-GPU Call-backs
-
-GPU kernels may suffer from resource underutilization in multi-GPU systems due to insufficient workload to saturate
-devices when incorporated within an irregular application. To better utilize the resources in multi-GPU systems, we
-propose a GPU-sided resource allocation method that can increase or decrease the number of GPUs in use as the workload
-changes over time. Our method employs GPU-to-CPU callbacks to allow GPU device(s) to request additional devices while
-the kernel execution is in flight. We implemented and tested multiple callback methods required for GPU-initiated
-workload offloading to other devices and measured their overheads on Nvidia and AMD platforms. To showcase the usage of
-callbacks in irregular applications, we implemented Breadth-First Search (BFS) that uses device-initiated workload
-offloading. Apart from allowing dynamic device allocation in persistently running kernels, it reduces time to solution
-on average by 15.7% at the cost of callback overheads with a minimum of 6.50 microseconds on AMD and 4.83 microseconds
-on Nvidia, depending on the chosen callback mechanism. Moreover, the proposed model can reduce the total device usage by
-up to 35%, which is associated with higher energy efficiency. Part of the project code is available [here](https://github.com/msasongko17/multigpu_callback).
 
 
 
