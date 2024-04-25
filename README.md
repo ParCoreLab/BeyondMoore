@@ -1,6 +1,6 @@
 # BeyondMoore
 
-<img alt="BeyondMoore Logo" src="https://raw.githubusercontent.com/ParCoreLab/BeyondMoore/main/assets/BeyondMoore-logo.png" width="200px">
+<img alt="BeyondMoore Logo" src="https://raw.githubusercontent.com/ParCoreLab/BeyondMoore/main/assets/BeyondMoore-logo.png" width="250px">
 
 ## _Pioneering the Future of Post-Moore Computing_
 
@@ -23,7 +23,7 @@ _Performance Tools_
 
 This project introduces a fully autonomous execution model for multi-GPU applications, eliminating CPU involvement beyond initial kernel launch. In conventional setups, the CPU orchestrates execution, causing overhead. We propose delegating this control flow entirely to devices, leveraging techniques like persistent kernels and device-initiated communication. Our CPU-free model significantly reduces communication overhead. Demonstrations on 2D/3D Jacobi stencil and Conjugate Gradient solvers show up to a 58.8% improvement in communication latency and a 1.63x speedup for CG on 8 NVIDIA A100 GPUs compared to CPU-controlled baselines.
 
-More details about the project[here](https://github.com/ParCoreLab/CPU-Free-model).
+More details about the project [here](https://github.com/ParCoreLab/CPU-Free-model).
 
 
 ### Snoopie
