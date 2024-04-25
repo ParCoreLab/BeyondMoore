@@ -20,13 +20,13 @@ _Performance Tools_
 * [Snoopie](#Snoopie): A Multi-GPU Communication Profiler and Visualiser
 * [PES AMD vs Intel](#Precise-Event-Sampling): A Precise Event Sampling Benchmark Suite
   
-### CPU Free Model
+### CPU-Free Model
 
 This project introduces a fully autonomous execution model for multi-GPU applications, eliminating CPU involvement beyond initial kernel launch. In conventional setups, the CPU orchestrates execution, causing overhead. We propose delegating this control flow entirely to devices, leveraging techniques like persistent kernels and device-initiated communication. Our CPU-free model significantly reduces communication overhead. Demonstrations on 2D/3D Jacobi stencil and Conjugate Gradient solvers show up to a 58.8% improvement in communication latency and a 1.63x speedup for CG on 8 NVIDIA A100 GPUs compared to CPU-controlled baselines.
 
 More details about the project [here](https://github.com/ParCoreLab/CPU-Free-model).
 
-### Muli-GPU Call-backs
+### Muli-GPU Callbacks
 
 To address resource underutilization in multi-GPU systems, particularly in irregular applications, we propose a GPU-sided resource allocation method. This method dynamically adjusts the number of GPUs in use based on workload changes, utilizing GPU-to-CPU callbacks to request additional devices during kernel execution. We implemented and tested multiple callback methods, measuring their overheads on Nvidia and AMD platforms. Demonstrating the approach in an irregular application like Breadth-First Search (BFS), we achieved a 15.7% reduction in time to solution on average, with callback overheads as low as 6.50 microseconds on AMD and 4.83 microseconds on Nvidia. Additionally, the model can reduce total device usage by up to 35%, improving energy efficiency. 
 
