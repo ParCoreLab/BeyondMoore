@@ -16,7 +16,7 @@ _Compiler, Runtime and Execution Models_
 * [CPU-Free Compiler](#CPU-Free-Model-Compiler): compiler for generating CPU-Free multi-GPU code
 * [Unified Communication Library](#Unified-Communication-Library): a unified communication library for device-to-device communication
   
-_Performance Tools_
+_Profiling Tools_
 * [Snoopie](#Snoopie): A Multi-GPU Communication Profiler and Visualiser
 * [PES AMD vs Intel](#Precise-Event-Sampling): A Precise Event Sampling Benchmark Suite
   
