@@ -1,6 +1,6 @@
 # BeyondMoore
 
-<img alt="BeyondMoore Logo" src="https://raw.githubusercontent.com/ParCoreLab/BeyondMoore/main/assets/erc_logo-150x150.png" width="75px">
+<img alt="BeyondMoore Logo" src="https://raw.githubusercontent.com/ParCoreLab/BeyondMoore/main/assets/BeyondMoore-logo.png" width="75px">
 
 ## _Pioneering the Future of Post-Moore Computing_
 
