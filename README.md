@@ -26,6 +26,14 @@ This project introduces a fully autonomous execution model for multi-GPU applica
 
 More details about the project [here](https://github.com/ParCoreLab/CPU-Free-model).
 
+### Snoopie
+
+With data movement posing a significant bottleneck in computing, profiling tools are essential for scaling multi-GPU applications efficiently. However, existing tools focus primarily on single GPU compute operations and lack support for monitoring GPU-GPU transfers and communication library calls. Addressing these gaps, we present Snoopie, an instrumentation-based multi-GPU communication profiling tool. Snoopie accurately tracks peer-to-peer transfers and GPU-centric communication library calls, attributing data movement to specific source code lines and objects. It offers various visualization modes, from system-wide overviews to detailed instructions and addresses, enhancing programmer productivity. 
+
+The tool is publicly available [here](https://github.com/ParCoreLab/snoopie).
+
+### Precise-Event Sampling
+
 ### Muli-GPU Callbacks
 
 To address resource underutilization in multi-GPU systems, particularly in irregular applications, we propose a GPU-sided resource allocation method. This method dynamically adjusts the number of GPUs in use based on workload changes, utilizing GPU-to-CPU callbacks to request additional devices during kernel execution. We implemented and tested multiple callback methods, measuring their overheads on Nvidia and AMD platforms. Demonstrating the approach in an irregular application like Breadth-First Search (BFS), we achieved a 15.7% reduction in time to solution on average, with callback overheads as low as 6.50 microseconds on AMD and 4.83 microseconds on Nvidia. Additionally, the model can reduce total device usage by up to 35%, improving energy efficiency. 
@@ -47,14 +55,6 @@ We're actively crafting a compiler to empower developers to write high-level Pyt
 We're undertaking the design of an API for a unified communication library to streamline device-to-device communication within the CPU-free model by aiming to optimize communication efficiency across diverse devices. 
 
 More details about the project will be available soon. The related paper is under preparation.
-
-### Snoopie
-
-With data movement posing a significant bottleneck in computing, profiling tools are essential for scaling multi-GPU applications efficiently. However, existing tools focus primarily on single GPU compute operations and lack support for monitoring GPU-GPU transfers and communication library calls. Addressing these gaps, we present Snoopie, an instrumentation-based multi-GPU communication profiling tool. Snoopie accurately tracks peer-to-peer transfers and GPU-centric communication library calls, attributing data movement to specific source code lines and objects. It offers various visualization modes, from system-wide overviews to detailed instructions and addresses, enhancing programmer productivity. 
-
-The tool is publicly available [here](https://github.com/ParCoreLab/snoopie).
-
-
 
 ---
 
