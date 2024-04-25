@@ -1,17 +1,20 @@
 # BeyondMoore
-_Pioneering the Future of Post-Moore Computing_
+## _Pioneering the Future of Post-Moore Computing_
 
 **BeyondMoore** addresses the timely research challenge of solving the software side of the Post Moore crisis, as Moore's Law reaches its limits in chip manufacturing. This transition requires a shift towards extreme heterogeneity in computing systems. Current programming solutions are host-centric, leading to scalability issues and limited parallelism. BeyondMoore proposes an autonomous execution model where accelerators operate independently, facilitated by a task graph programming abstraction. To efficiently execute this task graph, BeyondMoore develops a software framework that performs static and dynamic optimizations, issues accelerator-initiated data transfers along with supporting tools such as compiler and profiler. Below you can find details of projects comprising BeyondMoore’s software ecosystem. 
 
 
-## Projects
+## BeyondMoore Software Ecosystem
 
-* [CPU Free Model](#CPU-Free-Model): A Fully Autonomous Execution Model for Multi-GPU Applications that completely excludes The involvement of the CPU beyond the initial kernel launch.
+* [CPU-Free Execution Model](#CPU-Free-Model): A Fully Autonomous Execution Model for Multi-GPU Applications 
+* [CPU-Free Task Graph](https://github.com/msasongko17/multigpu_callback): CPU-Free Task Graph Execution using CUDA Graphs
+* [CPU-Free Compiler](#CPU-Free-Model-Compiler): Compiler for Generating CPU-Free Multi-GPU code
+* [Multi-GPU Callbacks](#Multi-GPU-Callbacks): GPU to CPU Callback Mechanisms
+  
+_Tools_
 * [Snoopie](#Snoopie): A Multi-GPU Communication Profiler and Visualiser
-* [CPU Free Model Compiler](#CPU-Free-Model-Compiler): Dace Augmented with code generation that uses the CPU Free Model
-* [Multi-GPU Callbacks](#Multi-GPU-Callbacks): (To be written)
-* [Ilyas's CUDA Graph Work](https://github.com/msasongko17/multigpu_callback): (To be written)
-
+* [PES](#Precise-Event-Sampling): A Precise Event Sampling Benchmark Suite
+  
 ### CPU Free Model
 
 This project proposes a fully autonomous execution model for multiGPU applications that completely excludes the
