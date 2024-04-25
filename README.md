@@ -15,7 +15,7 @@ _Compiler, Runtime and Execution Models_
   
 _Performance Tools_
 * [Snoopie](#Snoopie): A Multi-GPU Communication Profiler and Visualiser
-* [PES](#Precise-Event-Sampling): A Precise Event Sampling Benchmark Suite
+* [PES AMD vs Intel](#Precise-Event-Sampling): A Precise Event Sampling Benchmark Suite
   
 ### CPU Free Model
 
