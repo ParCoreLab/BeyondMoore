@@ -18,7 +18,7 @@ hardware accelerators and memory technologies.
 
 ### CPU Free Model
 
-This paper proposes a fully autonomous execution model for multiGPU applications that completely excludes the
+This project proposes a fully autonomous execution model for multiGPU applications that completely excludes the
 involvement of the CPU beyond the initial kernel launch. In a typical multi-GPU application, the host serves as the
 orchestrator of execution by directly launching kernels, issuing communication calls, and acting as a synchronizer for
 devices. We argue that this orchestration, or control flow path, causes undue overhead and can be delegated entirely to
