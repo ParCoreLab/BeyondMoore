@@ -1,12 +1,8 @@
 # BeyondMoore
 _Pioneering the Future of Post-Moore Computing_
 
-**BeyondMoore** addresses the timely research challenge of solving the software side of the Post Moore crisis. The
-techno-economical model in computing, known as the **Moore’s Law**, has led to an exceptionally productive era for humanity
-and numerous scientific discoveries over the past 50+ years. However, due to the fundamental limits in chip
-manufacturing we are about to mark the end of Moore’s Law and enter a new era of computing where continued performance
-improvement will likely emerge from **extreme heterogeneity**. The new systems are expected to bring a diverse set of
-hardware accelerators and memory technologies.
+**BeyondMoore** addresses the timely research challenge of solving the software side of the Post Moore crisis, as Moore's Law reaches its limits in chip manufacturing. This transition requires a shift towards extreme heterogeneity in computing systems. Current programming solutions are host-centric, leading to scalability issues and limited parallelism. BeyondMoore proposes an autonomous execution model where accelerators operate independently, facilitated by a task graph programming abstraction. To efficiently execute this task graph, BeyondMoore develops a software framework that performs static and dynamic optimizations, issues accelerator-initiated data transfers along with supporting tools such as compiler and profiler. Below you can find details of projects comprising BeyondMoore’s software ecosystem. 
+
 
 ## Projects
 
