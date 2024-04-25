@@ -6,28 +6,22 @@
 
 ## BeyondMoore Software Ecosystem
 
+_Compiler, Runtime and Execution Models_
 * [CPU-Free Execution Model](#CPU-Free-Model): A Fully Autonomous Execution Model for Multi-GPU Applications 
-* [CPU-Free Task Graph](https://github.com/msasongko17/multigpu_callback): CPU-Free Task Graph Execution using CUDA Graphs
+* [CPU-Free Task Graph](#TaskGraph): CPU-Free Task Graph Execution using CUDA Graphs
 * [CPU-Free Compiler](#CPU-Free-Model-Compiler): Compiler for Generating CPU-Free Multi-GPU code
 * [Multi-GPU Callbacks](#Multi-GPU-Callbacks): GPU to CPU Callback Mechanisms
   
-_Tools_
+_Performance Tools_
 * [Snoopie](#Snoopie): A Multi-GPU Communication Profiler and Visualiser
 * [PES](#Precise-Event-Sampling): A Precise Event Sampling Benchmark Suite
   
 ### CPU Free Model
 
-This project proposes a fully autonomous execution model for multiGPU applications that completely excludes the
-involvement of the CPU beyond the initial kernel launch. In a typical multi-GPU application, the host serves as the
-orchestrator of execution by directly launching kernels, issuing communication calls, and acting as a synchronizer for
-devices. We argue that this orchestration, or control flow path, causes undue overhead and can be delegated entirely to
-devices to improve performance in applications that require communication among peers. For the proposed CPU-free
-execution model, we leverage existing techniques such as persistent kernels, thread block specialization, device-side
-barriers, and device-initiated communication routines to write fully autonomous multi-GPU code and achieve significantly
-reduced communication overheads. We demonstrate our proposed model on two broadly used iterative solvers, 2D/3D Jacobi
-stencil and Conjugate Gradient(CG). Compared to the CPU-controlled baselines, the CPU-free model can improve 3D stencil
-communication latency by 58.8% and provide a 1.63x speedup for CG on 8 NVIDIA A100 GPUs. The project code is available
-[here](https://github.com/ParCoreLab/CPU-Free-model).
+This project introduces a fully autonomous execution model for multi-GPU applications, eliminating CPU involvement beyond initial kernel launch. In conventional setups, the CPU orchestrates execution, causing overhead. We propose delegating this control flow entirely to devices, leveraging techniques like persistent kernels and device-initiated communication. Our CPU-free model significantly reduces communication overhead. Demonstrations on 2D/3D Jacobi stencil and Conjugate Gradient solvers show up to a 58.8% improvement in communication latency and a 1.63x speedup for CG on 8 NVIDIA A100 GPUs compared to CPU-controlled baselines.
+
+More details about the project[here](https://github.com/ParCoreLab/CPU-Free-model).
+
 
 ### Snoopie
 
