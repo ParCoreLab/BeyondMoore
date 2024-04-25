@@ -1,5 +1,3 @@
-# BeyondMoore
-
 <img alt="BeyondMoore Logo" src="https://raw.githubusercontent.com/ParCoreLab/BeyondMoore/main/assets/BeyondMoore-logo.png" width="250px">
 
 ## _Pioneering the Future of Post-Moore Computing_
